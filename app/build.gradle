@@ -5,6 +5,7 @@ apply plugin: 'maven'
 // markdown in javadoc
 // https://github.com/Abnaxos/pegdown-doclet
 apply plugin: 'ch.raffael.pegdown-doclet'
+apply plugin: 'jacoco'
 
 
 android {
@@ -61,6 +62,7 @@ android {
             // minifyEnabled true
 			minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            testCoverageEnabled true
         }
         release {
 			shrinkResources true
