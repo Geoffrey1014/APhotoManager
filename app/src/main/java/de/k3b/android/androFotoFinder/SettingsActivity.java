@@ -74,8 +74,13 @@ public class SettingsActivity extends PreferenceActivity {
         if (Global.debugEnabled && (intent != null)){
             Log.d(Global.LOG_CONTEXT, "SettingsActivity onCreate " + intent.toUri(Intent.URI_INTENT_SCHEME));
         }
-
-        this.addPreferencesFromResource(R.xml.preferences);
+        try{
+            this.addPreferencesFromResource(R.xml.preferences);
+        }
+        catch (Throwable  t){
+            Log.i("Themis", "onCreate: step last");
+            throw t;
+        }
         prefsInstance = PreferenceManager
                 .getDefaultSharedPreferences(this);
         global2Prefs(this.getApplication());
