@@ -626,7 +626,7 @@ public class FotoGalleryActivity extends LocalizedActivity implements Common,
 
 
             case R.id.cmd_settings:
-                Log.i("Themis", "onOptionsItemSelected: step 1 & 2: 点击settings");
+                Log.i("Themis", "Event 1: Clicked the \"Settings\" in the options.");
                 SettingsActivity.show(this);
                 return true;
             case R.id.cmd_about:

@@ -77,9 +77,9 @@ public class SettingsActivity extends PreferenceActivity {
         try{
             this.addPreferencesFromResource(R.xml.preferences);
         }
-        catch (Throwable  t){
-            Log.i("Themis", "onCreate: step last");
-            throw t;
+        catch (RuntimeException e){
+            Log.i("Themis", "Crash!: RuntimeException.");
+            throw e;
         }
         prefsInstance = PreferenceManager
                 .getDefaultSharedPreferences(this);
